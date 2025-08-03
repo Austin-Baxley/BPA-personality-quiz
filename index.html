@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Wylie East BPA - Business Personality Quiz</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #fdfbfb, #ebedee);
+      padding: 30px;
+      max-width: 800px;
+      margin: auto;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      font-family: Georgia, serif;
+      font-size: 2.8em;
+      font-weight: normal;
+      margin-bottom: 10px;
+    }
+    p.subtitle {
+      text-align: center;
+      font-size: 1.2em;
+      color: #555;
+      margin-bottom: 30px;
+    }
+    .question {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .question p {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+    input[type="text"],
+    input[type="tel"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1em;
+    }
+    button {
+      background-color: #2ecc71;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1.1em;
+      border-radius: 8px;
+      cursor: pointer;
+      display: block;
+      margin: 30px auto;
+    }
+    button:hover {
+      background-color: #27ae60;
+    }
+    .result {
+      margin-top: 30px;
+      padding: 20px;
+      background: #e9ffe9;
+      border-left: 6px solid #27ae60;
+      border-radius: 10px;
+      font-size: 1.2em;
+      display: none;
+    }
+    .result h2 {
+      margin-top: 0;
+      color: #27ae60;
+    }
+    .result p {
+      margin: 10px 0 0 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>
+    <span style="color: #002f6c;">Wylie East </span>
+    <span style="color: #c8102e; font-style: italic;">B</span>
+    <span style="color: #c8102e; font-style: italic;">P</span>
+    <span style="color: #c8102e; font-style: italic;">A</span>
+  </h1>
+  <p class="subtitle">What’s Your Business Personality?</p>
+
+  <form id="quizForm">
+    <div class="question">
+      <p>1. What is your name?</p>
+      <input type="text" name="userName" placeholder="Your full name" required />
+    </div>
+
+    <div class="question">
+      <p>2. What is your phone number?</p>
+      <input type="tel" name="userPhone" placeholder="e.g. 469-555-1234" required />
+    </div>
+
+    <!-- Questions 3 to 12 -->
+    <div class="question"><p>3. How do you approach a new project?</p>
+      <label><input type="radio" name="q1" value="leader" required> I take the lead and set goals</label>
+      <label><input type="radio" name="q1" value="innovator"> I brainstorm creative approaches</label>
+      <label><input type="radio" name="q1" value="organizer"> I build a detailed plan</label>
+      <label><input type="radio" name="q1" value="supporter"> I ask how I can help the team</label>
+    </div>
+    <div class="question"><p>4. What excites you most about work?</p>
+      <label><input type="radio" name="q2" value="hustler" required> Getting results and pushing limits</label>
+      <label><input type="radio" name="q2" value="analyst"> Solving tough problems logically</label>
+      <label><input type="radio" name="q2" value="collaborator"> Being part of something bigger</label>
+      <label><input type="radio" name="q2" value="innovator"> Creating new things</label>
+    </div>
+    <div class="question"><p>5. How do others describe you?</p>
+      <label><input type="radio" name="q3" value="strategist" required> Strategic and wise</label>
+      <label><input type="radio" name="q3" value="supporter"> Trustworthy and kind</label>
+      <label><input type="radio" name="q3" value="leader"> Confident and assertive</label>
+      <label><input type="radio" name="q3" value="organizer"> Reliable and organized</label>
+    </div>
+    <div class="question"><p>6. You have an hour of free time at work. What do you do?</p>
+      <label><input type="radio" name="q4" value="analyst" required> Analyze data or plan improvements</label>
+      <label><input type="radio" name="q4" value="collaborator"> Check in with teammates</label>
+      <label><input type="radio" name="q4" value="innovator"> Sketch out a new idea</label>
+      <label><input type="radio" name="q4" value="hustler"> Knock out extra tasks fast</label>
+    </div>
+    <div class="question"><p>7. What's your biggest strength?</p>
+      <label><input type="radio" name="q5" value="organizer" required> Discipline and structure</label>
+      <label><input type="radio" name="q5" value="collaborator"> Empathy and teamwork</label>
+      <label><input type="radio" name="q5" value="leader"> Boldness and decision-making</label>
+      <label><input type="radio" name="q5" value="strategist"> Big-picture thinking</label>
+    </div>
+    <div class="question"><p>8. What kind of problems do you enjoy solving?</p>
+      <label><input type="radio" name="q6" value="analyst" required> Puzzles, patterns, and logic</label>
+      <label><input type="radio" name="q6" value="supporter"> Conflict between people</label>
+      <label><input type="radio" name="q6" value="leader"> High-stakes decisions</label>
+      <label><input type="radio" name="q6" value="innovator"> Creative challenges</label>
+    </div>
+    <div class="question"><p>9. What drives your ambition?</p>
+      <label><input type="radio" name="q7" value="hustler" required> Success and recognition</label>
+      <label><input type="radio" name="q7" value="supporter"> Helping others grow</label>
+      <label><input type="radio" name="q7" value="strategist"> Creating long-term impact</label>
+      <label><input type="radio" name="q7" value="organizer"> Doing things the right way</label>
+    </div>
+    <div class="question"><p>10. In a team, you're usually the one who...</p>
+      <label><input type="radio" name="q8" value="collaborator" required> Connects and encourages others</label>
+      <label><input type="radio" name="q8" value="leader"> Guides decisions and direction</label>
+      <label><input type="radio" name="q8" value="strategist"> Anticipates future issues</label>
+      <label><input type="radio" name="q8" value="analyst"> Breaks down complex ideas</label>
+    </div>
+    <div class="question"><p>11. What’s your ideal task?</p>
+      <label><input type="radio" name="q9" value="supporter" required> Helping someone succeed</label>
+      <label><input type="radio" name="q9" value="innovator"> Designing something new</label>
+      <label><input type="radio" name="q9" value="organizer"> Managing a checklist</label>
+      <label><input type="radio" name="q9" value="hustler"> Selling a great idea</label>
+    </div>
+    <div class="question"><p>12. How do you make decisions?</p>
+      <label><input type="radio" name="q10" value="leader" required> I trust my instincts</label>
+      <label><input type="radio" name="q10" value="analyst"> I weigh data and logic</label>
+      <label><input type="radio" name="q10" value="collaborator"> I seek feedback</label>
+      <label><input type="radio" name="q10" value="strategist"> I think long-term</label>
+    </div>
+
+    <button type="button" onclick="calculateResult()">See My Personality</button>
+  </form>
+
+  <div class="result" id="resultBox"></div>
+
+  <script>
+    function calculateResult() {
+      const form = document.forms["quizForm"];
+      const name = form["userName"].value;
+      const phone = form["userPhone"].value;
+
+      const scores = {
+        leader: 0, innovator: 0, organizer: 0, collaborator: 0,
+        analyst: 0, hustler: 0, strategist: 0, supporter: 0
+      };
+
+      for (let i = 1; i <= 10; i++) {
+        const answer = form["q" + i].value;
+        if (!answer) {
+          alert("Please answer all the questions.");
+          return;
+        }
+        scores[answer]++;
+      }
+
+      const topType = Object.keys(scores).reduce((a, b) =>
+        scores[a] > scores[b] ? a : b
+      );
+
+      const descriptions = {
+        leader: {
+          title: "The Leader 🧭",
+          desc: "You’re confident, decisive, and naturally take charge. People follow your direction and admire your boldness."
+        },
+        innovator: {
+          title: "The Innovator 💡",
+          desc: "You think outside the box and love creating new ideas. You thrive in environments that value change and fresh thinking."
+        },
+        organizer: {
+          title: "The Organizer 📋",
+          desc: "Structure, reliability, and planning are your strengths. You bring order and efficiency to every team you’re on."
+        },
+        collaborator: {
+          title: "The Collaborator 🤝",
+          desc: "You shine in a team environment. Your empathy and connection make you an essential team player and morale booster."
+        },
+        analyst: {
+          title: "The Analyst 📊",
+          desc: "You break down complex problems with logic and insight. Data and patterns are your playground."
+        },
+        hustler: {
+          title: "The Hustler 🔥",
+          desc: "You’re driven, energetic, and results-focused. You turn goals into reality through grit and determination."
+        },
+        strategist: {
+          title: "The Strategist ♟️",
+          desc: "You think long-term and anticipate challenges. You’re always ten steps ahead with a plan in your pocket."
+        },
+        supporter: {
+          title: "The Supporter 🌱",
+          desc: "You lift others up and strengthen the whole team. Your encouragement and kindness make others feel seen and valued."
+        }
+      };
+
+      const result = descriptions[topType];
+
+      // Show result
+      const resultBox = document.getElementById("resultBox");
+      resultBox.innerHTML = `
+        <h2>${name}, you are ${result.title}</h2>
+        <p>${result.desc}</p>
+        <hr>
+        <p>Come see us again during Rush Week for our first Wylie East BPA meeting of the year.<br>
+        Best Regards,<br><strong>W.E. BPA</strong></p>
+      `;
+      resultBox.style.display = "block";
+
+      // Submit to Google Apps Script
+      fetch("https://script.google.com/macros/s/AKfycbyXmwPhD_3pvnxKW6AaMLPgwus-I9iEJMOQg8j-RU6ohZn0J0EPpqORWseIyViYR9pc/exec", {
+        method: "POST",
+        body: JSON.stringify({
+          name: name,
+          phone: phone,
+          result: result.title
+        }),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+      .then(response => console.log("Submitted to Google Sheet"))
+      .catch(error => console.error("Error submitting:", error));
+    }
+  </script>
+
+</body>
+</html>
